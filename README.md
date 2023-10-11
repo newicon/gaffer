@@ -1,5 +1,5 @@
 # gaffer
-a minimal [PSR](https://www.php-fig.org/psr/)/[composer](https://getcomposer.org/) based framework demo
+minimal/experimental [PSR](https://www.php-fig.org/psr/)/[composer](https://getcomposer.org/) based framework demo
 
 __IMPORTANT NOTE :__    
 __batteries not included ... this is very much a work in progress ... don't say you weren't warned!__
