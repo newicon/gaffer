@@ -15,6 +15,7 @@ a minimal [PSR](https://www.php-fig.org/psr/)/[composer](https://getcomposer.org
 /public/assets - fixed assets (css/js/images/etc)
 /image - uploadable and/or resized images
 /media - uploadable media
+/vendor - composer deps + the project autoloader
 
 ## installation
 - clone this repo (duh!)
@@ -32,11 +33,12 @@ DB_USER = 'root'
 DB_PASS = 'root'
 DB_CHAR = 'utf8'
 ```
-- create a local database using the scripts in /sql 
+- create a local database using the scripts in /sql
+- run ```composer install```
 - browse away!
 - to view the admin area you will need to create an admin user via cli.php
 ```php cli.php add-user {email} {password}```
 
 ## notes
 - highly PSR compliant
-- composer
+- highly composer based ... uses the composer autoloader with additional PSR4 support
