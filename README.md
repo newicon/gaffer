@@ -69,6 +69,7 @@ DB_CHAR = 'utf8'
     - favour light-weight libraries
     - favour mature/proven libraries
     - favour libraries with minimal dependencies of their own
+- change the System namespace to Gaffer
 - dedicated CLI bootstrap
 - move the Deform library to its own repo
 - unit/acceptance tests
