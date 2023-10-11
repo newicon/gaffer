@@ -12,13 +12,13 @@ __batteries not included ... this is very much a work in progress ... don't say 
 - SCSS if you wish to compile the css from sources
 
 ## structure
-/app - the demo app   
-/lib - any non-composer based libraries/dependencies (currently just a form handling library called Deform)   
-/public - the public html directory   
-/public/assets - fixed assets css/js/images/etc (in the repo)   
-/image - uploadable and/or resized images (not in the repo)
-/media - media (not in the repo)
-/vendor - composer deps + the project autoloader   
+```/app``` - the demo app   
+```/lib``` - any non-composer based libraries/dependencies (currently just a form handling library called Deform)   
+```/public``` - the public html directory   
+```/public/assets``` - fixed assets css/js/images/etc (in the repo)   
+```/image``` - uploadable and/or resized images (not in the repo)   
+```/media``` - media (not in the repo)   
+```/vendor``` - composer deps + the project autoloader   
 
 ## installation
 - clone this repo (duh!)
