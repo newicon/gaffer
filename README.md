@@ -1,6 +1,8 @@
 # gaffer
 a minimal [PSR](https://www.php-fig.org/psr/)/[composer](https://getcomposer.org/) based framework demo
 
+__IMPORTANT NOTE : batteries not included ... this is very much a work in progress ... use at your own discretion!__
+
 ## requirements
 - local webserver : apache2 (due to the current .htaccess requirement)
 - PHP 8.1 +
@@ -9,13 +11,13 @@ a minimal [PSR](https://www.php-fig.org/psr/)/[composer](https://getcomposer.org
 - SCSS if you wish to compile the css from sources
 
 ## structure
-/app - demo app
-/lib - any non-composer based libraries/dependencies
-/public - the public html directory
-/public/assets - fixed assets (css/js/images/etc)
-/image - uploadable and/or resized images
-/media - uploadable media
-/vendor - composer deps + the project autoloader
+/app - the demo app   
+/lib - any non-composer based libraries/dependencies (currently just a form handling library called Deform)   
+/public - the public html directory   
+/public/assets - fixed assets (css/js/images/etc)   
+/image - uploadable and/or resized images   
+/media - uploadable media   
+/vendor - composer deps + the project autoloader   
 
 ## installation
 - clone this repo (duh!)
