@@ -71,6 +71,7 @@ DB_CHAR = 'utf8'
     - favour libraries with minimal dependencies of their own
 - change the System namespace to Gaffer
 - dedicated CLI bootstrap
+- add a [PSR-15](https://www.php-fig.org/psr/psr-15/) based middleware support with a couple of example implementations 
 - move the Deform library to its own repo
 - unit/acceptance tests
 - rename /image to /images!!
