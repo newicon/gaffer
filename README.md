@@ -5,6 +5,16 @@ a minimal [PSR](https://www.php-fig.org/psr/)/[composer](https://getcomposer.org
 - local webserver : apache2 (due to the current .htaccess requirement)
 - PHP 8.1 +
 - MySQL/Maria 15.1+
+- interwebs! uses various CDN libraries
+- SCSS if you wish to compile the css from sources
+
+## structure
+/app - demo app
+/lib - any non-composer based libraries/dependencies
+/public - the public html directory
+/public/assets - fixed assets (css/js/images/etc)
+/image - uploadable and/or resized images
+/media - uploadable media
 
 ## installation
 - clone this repo (duh!)
@@ -26,3 +36,7 @@ DB_CHAR = 'utf8'
 - browse away!
 - to view the admin area you will need to create an admin user via cli.php
 ```php cli.php add-user {email} {password}```
+
+## notes
+- highly PSR compliant
+- composer

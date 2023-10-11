@@ -1,5 +1,6 @@
 .idea
 config.ini
+vendor/
 public/images/*
 !public/images/.htaccess
 public/image/*
