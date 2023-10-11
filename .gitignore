@@ -1,0 +1,8 @@
+.idea
+public/images/*
+!public/images/.htaccess
+public/image/*
+!public/image/.htaccess
+public/media/*
+!public/media/.htaccess
+var/

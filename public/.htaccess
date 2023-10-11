@@ -1,0 +1,20 @@
+RewriteEngine on
+
+# 301 for trailing slash
+# RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# generic rule to block all php except the main index one!
+RewriteCond %{REQUEST_URI} !^/(index|image)\.php [NC]
+RewriteRule \.php$ - [F,NC]
+
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# otherwise forward it to index.php
+RewriteRule . index.php
+
+<Limit DELETE>
+  Order deny,allow
+  Allow from all
+</Limit>

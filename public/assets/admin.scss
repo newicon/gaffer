@@ -1,0 +1,296 @@
+@import url("reset.css");
+@import url('http://fonts.cdnfonts.com/css/alegreya-sc');
+
+html, body { height:100%; }
+body {
+  font-family: Arial, sans-serif;
+  &.modalopen {
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .full-modal {
+    padding:0;
+    position: fixed;
+    overflow: auto;
+    width: calc(100% - 100px);
+    height: calc(100% - 100px) !important;
+    max-width: 90%;
+    top: 50px !important;
+    left: 100px;
+    transform: none;
+    pointer-events: auto;
+    border:2px solid #777;
+    border-radius:8px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0 22px 70px 4px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    .full-modal-title {
+      position:relative;
+      width:100%;
+      text-align:center;
+      padding:6px;
+      border-bottom:1px solid #bbb;
+      .full-modal-close-button {
+        font-family: Arial, sans-serif;
+        position:absolute;
+        right:6px;
+        top:6px;
+        cursor:pointer;
+        padding:2px;
+        border-radius:100%;
+        line-height:10px;
+      }
+    }
+    .full-modal-body {
+      width:100%;
+      height:0;
+      flex-grow:1;
+      display:flex;
+      flex-direction:row;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      .fa-spinner {
+        font-size:2em;
+        color:#bbb;
+      }
+      >div:first-child {
+        width:80%;
+        height:100%;
+        border-right:1px solid #bbb;
+        overflow-y:scroll;
+      }
+      >div:last-child {
+        width:20%;
+        height:100%;
+      }
+    }
+    .full-modal-foot {
+      width:100%;
+      padding:6px;
+      text-align:center;
+      border-top:1px solid #bbb;
+      >* {
+        margin:0 4px;
+      }
+    }
+    .image-list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .image-wrap {
+        width: 200px;
+        height: 200px;
+        border: 2px solid white;
+        overflow: hidden;
+        cursor: pointer;
+
+        &.selected {
+          border: 2px solid red;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+
+    /* take over trumbowyg modal */
+    &.trumbowyg-modal.trumbowyg-fixed-top {
+      display:block;
+      .trumbowyg-modal-box {
+        max-width: 100%;
+        width: 100%;
+        overflow: hidden;
+
+        .selected-info {
+          position: absolute;
+          left: 10px;
+          width: calc(100% - 200px);
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}
+.admin {
+  display:grid;
+  grid-template-columns: 200px auto;
+  height:100%;
+  color:#555;
+  > nav {
+    background-color:#ccc;
+    padding:10px;
+    display:flex;
+    flex-direction:column;
+    flex-grow:1;
+
+  }
+  > div {
+    padding:10px;
+  }
+  a {
+    width:100%;
+    color:#557;
+    text-decoration:none;
+  }
+  a:hover {
+    opacity:0.5;
+  }
+  .admin-content {
+    width:992px;
+  }
+  .trumbowyg-editor {
+    font-family: "Alegreya SC", serif;
+    a {
+      color:inherit;
+      text-decoration:underline;
+      &:hover {
+        opacity:1
+      }
+    }
+  }
+}
+
+#login-form {
+  width:400px;
+  height:240px;
+  position:absolute;
+  top:calc(50% - 200px);
+  left:50%;
+  margin-left:-100px;
+  margin-right:-80px;
+  background-color:#ccc;
+  border:2px solid #aaa;
+  border-radius:10px;
+  padding:20px;
+  label {
+    width:100px;
+    display:inline-block;
+    text-align:right;
+  }
+  input[type=email],input[type=password] {
+    margin-top:6px;
+    width:200px;
+    display:inline-block;
+  }
+  input[type=submit] {
+    padding:5px 20px;
+    margin:10px auto;
+    display:block;
+  }
+  .error {
+    color:red;
+    text-align:center;
+  }
+}
+
+.component-container {
+  margin-bottom:20px;
+  .error-container {
+    color:red;
+  }
+  .hint-container {
+    color:#aaa;
+    font-size:14px;
+  }
+  .control-container input[type=text] {
+    width:400px;
+  }
+}
+
+input[type=submit], button, .form-cancel-button {
+  cursor:pointer;
+  background-color:#aac;
+  border-radius:10px;
+  border:2px solid #99b;
+  padding:4px 10px;
+  display:inline-block;
+  margin:2px;
+  &:hover {
+    opacity:0.8;
+  }
+}
+
+.trumbowyg-editor {
+  min-height:600px;
+}
+
+hr {
+  width:100%;
+  border-color:#ddd;
+}
+
+.center {
+  text-align:center;
+}
+
+table {
+  background-color:#ccc;
+  thead {
+    tr {
+      th {
+        background-color:#ddd;
+        padding:6px;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        background-color:white;
+        padding:6px;
+        &.center > img {
+          margin:0 auto;
+        }
+      }
+    }
+  }
+}
+
+.file-drop-area {
+  background-color:#ccc;
+  border:2px dashed #aaa;
+  border-radius:8px;
+}
+
+.dataTables_wrapper {
+  .dataTables_length {
+    padding-top:10px;
+  }
+  .dataTables_filter {
+    padding-bottom:12px;
+  }
+
+  .dataTables_paginate {
+    display: flex;
+
+    > span {
+      display: flex;
+    }
+  }
+
+  .dataTable tbody {
+    tr.even td {
+      background-color: #f7f7f7;
+    }
+    tr td {
+      max-height:100px;
+      overflow:hidden;
+    }
+  }
+}
+
+.line-clamp-4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  link-clamp:4;
+  -webkit-box-orient: vertical;
+}

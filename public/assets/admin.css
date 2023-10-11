@@ -1,0 +1,280 @@
+@import url("reset.css");
+@import url("http://fonts.cdnfonts.com/css/alegreya-sc");
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+body.modalopen {
+  overflow: hidden;
+  pointer-events: none;
+}
+body .full-modal {
+  padding: 0;
+  position: fixed;
+  overflow: auto;
+  width: calc(100% - 100px);
+  height: calc(100% - 100px) !important;
+  max-width: 90%;
+  top: 50px !important;
+  left: 100px;
+  transform: none;
+  pointer-events: auto;
+  border: 2px solid #777;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0 22px 70px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* take over trumbowyg modal */
+}
+body .full-modal .full-modal-title {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 6px;
+  border-bottom: 1px solid #bbb;
+}
+body .full-modal .full-modal-title .full-modal-close-button {
+  font-family: Arial, sans-serif;
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 100%;
+  line-height: 10px;
+}
+body .full-modal .full-modal-body {
+  width: 100%;
+  height: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+body .full-modal .full-modal-body .fa-spinner {
+  font-size: 2em;
+  color: #bbb;
+}
+body .full-modal .full-modal-body > div:first-child {
+  width: 80%;
+  height: 100%;
+  border-right: 1px solid #bbb;
+  overflow-y: scroll;
+}
+body .full-modal .full-modal-body > div:last-child {
+  width: 20%;
+  height: 100%;
+}
+body .full-modal .full-modal-foot {
+  width: 100%;
+  padding: 6px;
+  text-align: center;
+  border-top: 1px solid #bbb;
+}
+body .full-modal .full-modal-foot > * {
+  margin: 0 4px;
+}
+body .full-modal .image-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+body .full-modal .image-list .image-wrap {
+  width: 200px;
+  height: 200px;
+  border: 2px solid white;
+  overflow: hidden;
+  cursor: pointer;
+}
+body .full-modal .image-list .image-wrap.selected {
+  border: 2px solid red;
+}
+body .full-modal .image-list .image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+body .full-modal.trumbowyg-modal.trumbowyg-fixed-top {
+  display: block;
+}
+body .full-modal.trumbowyg-modal.trumbowyg-fixed-top .trumbowyg-modal-box {
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+body .full-modal.trumbowyg-modal.trumbowyg-fixed-top .trumbowyg-modal-box .selected-info {
+  position: absolute;
+  left: 10px;
+  width: calc(100% - 200px);
+  margin-top: 8px;
+}
+
+.admin {
+  display: grid;
+  grid-template-columns: 200px auto;
+  height: 100%;
+  color: #555;
+}
+.admin > nav {
+  background-color: #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.admin > div {
+  padding: 10px;
+}
+.admin a {
+  width: 100%;
+  color: #557;
+  text-decoration: none;
+}
+.admin a:hover {
+  opacity: 0.5;
+}
+.admin .admin-content {
+  width: 992px;
+}
+.admin .trumbowyg-editor {
+  font-family: "Alegreya SC", serif;
+}
+.admin .trumbowyg-editor a {
+  color: inherit;
+  text-decoration: underline;
+}
+.admin .trumbowyg-editor a:hover {
+  opacity: 1;
+}
+
+#login-form {
+  width: 400px;
+  height: 240px;
+  position: absolute;
+  top: calc(50% - 200px);
+  left: 50%;
+  margin-left: -100px;
+  margin-right: -80px;
+  background-color: #ccc;
+  border: 2px solid #aaa;
+  border-radius: 10px;
+  padding: 20px;
+}
+#login-form label {
+  width: 100px;
+  display: inline-block;
+  text-align: right;
+}
+#login-form input[type=email], #login-form input[type=password] {
+  margin-top: 6px;
+  width: 200px;
+  display: inline-block;
+}
+#login-form input[type=submit] {
+  padding: 5px 20px;
+  margin: 10px auto;
+  display: block;
+}
+#login-form .error {
+  color: red;
+  text-align: center;
+}
+
+.component-container {
+  margin-bottom: 20px;
+}
+.component-container .error-container {
+  color: red;
+}
+.component-container .hint-container {
+  color: #aaa;
+  font-size: 14px;
+}
+.component-container .control-container input[type=text] {
+  width: 400px;
+}
+
+input[type=submit], button, .form-cancel-button {
+  cursor: pointer;
+  background-color: #aac;
+  border-radius: 10px;
+  border: 2px solid #99b;
+  padding: 4px 10px;
+  display: inline-block;
+  margin: 2px;
+}
+input[type=submit]:hover, button:hover, .form-cancel-button:hover {
+  opacity: 0.8;
+}
+
+.trumbowyg-editor {
+  min-height: 600px;
+}
+
+hr {
+  width: 100%;
+  border-color: #ddd;
+}
+
+.center {
+  text-align: center;
+}
+
+table {
+  background-color: #ccc;
+}
+table thead tr th {
+  background-color: #ddd;
+  padding: 6px;
+}
+table tbody tr td {
+  background-color: white;
+  padding: 6px;
+}
+table tbody tr td.center > img {
+  margin: 0 auto;
+}
+
+.file-drop-area {
+  background-color: #ccc;
+  border: 2px dashed #aaa;
+  border-radius: 8px;
+}
+
+.dataTables_wrapper .dataTables_length {
+  padding-top: 10px;
+}
+.dataTables_wrapper .dataTables_filter {
+  padding-bottom: 12px;
+}
+.dataTables_wrapper .dataTables_paginate {
+  display: flex;
+}
+.dataTables_wrapper .dataTables_paginate > span {
+  display: flex;
+}
+.dataTables_wrapper .dataTable tbody tr.even td {
+  background-color: #f7f7f7;
+}
+.dataTables_wrapper .dataTable tbody tr td {
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.line-clamp-4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  link-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+/*# sourceMappingURL=admin.css.map */
