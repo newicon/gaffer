@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.25.2/ui/trumbowyg.min.css" integrity="sha512-K87nr2SCEng5Nrdwkb6d6crKqDAl4tJn/BD17YCXH0hu2swuNMqSV6S8hTBZ/39h+0pDpW/tbQKq9zua8WiZTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.25.2/plugins/colors/ui/trumbowyg.colors.min.css" integrity="sha512-VCJM62+9ou73PDL8ROa9D+lZKG9qrbGv91WxlU3Hyb4lfdnT5wBnLvX45vd45ENRU271iRI9xa1fYJbrVed8Jw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.css" integrity="sha512-FaAQujRxLMvw+BkmGN3w7u9EdQQr1t0vQoY8KDh09+6SFaWSTe+KrT8oCWg25X91hytm5c5BTmiSGQejkraaZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="<?= $this->asset('/assets/admin.css') ?>">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
@@ -41,6 +42,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.25.2/plugins/pasteembed/trumbowyg.pasteembed.min.js" integrity="sha512-TSf9IFC4Fd1wuS7sosoKceCrxVNdXtEhO4G2BW+M5F2GFPPHMnjQ14zd3DvUc7MwPbMYnSMwEUHzF19NqNgl8w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.datatables.net/rowreorder/1.2.8/js/dataTables.rowReorder.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.min.js" integrity="sha512-/4kQE5RJQYHRhUiK+CZS8UhaJTnLmQkDuf8lOhiP2xLdjthA/rm0VqqWjcyelIx+NDyNHFmtqvuIgOFQnI34WA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.2/simple-lightbox.jquery.min.js" integrity="sha512-xhM9zDEG1U2/XOmfyPkyZnvvztrpgV4SVflYGGSXQwQ9BeXxYgRIPhzrd6lPp33cNQWZJlbvIKlwkFjry/8GhQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="<?= $this->asset('/assets/admin.js')?>"></script>
 </body>
 </html>

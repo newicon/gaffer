@@ -101,6 +101,9 @@ body .full-modal .image-list .image-wrap img {
   height: 100%;
   object-fit: contain;
 }
+body .full-modal.trumbowyg-modal .trumbowyg-modal-box {
+  min-height: 100%;
+}
 body .full-modal.trumbowyg-modal.trumbowyg-fixed-top {
   display: block;
 }
@@ -109,11 +112,39 @@ body .full-modal.trumbowyg-modal.trumbowyg-fixed-top .trumbowyg-modal-box {
   width: 100%;
   overflow: hidden;
 }
-body .full-modal.trumbowyg-modal.trumbowyg-fixed-top .trumbowyg-modal-box .selected-info {
+body .full-modal.trumbowyg-modal.trumbowyg-fixed-top .trumbowyg-modal-box .image-manager-status {
   position: absolute;
   left: 10px;
   width: calc(100% - 200px);
   margin-top: 8px;
+}
+body .sl-wrapper .sl-close {
+  color: white;
+}
+body .sl-wrapper .sl-navigation {
+  display: none !important;
+}
+body .sl-wrapper .sl-counter {
+  display: none !important;
+}
+body .sl-overlay {
+  background-color: black;
+}
+body .droppable {
+  font-size: 4rem;
+  background-color: #ddd;
+  border-radius: 10px;
+  width: 50%;
+  height: 50%;
+  border: 1px dashed #555;
+}
+body .droppable.over {
+  opacity: 0.5;
+}
+body .center-content {
+  display: grid;
+  align-items: center;
+  justify-items: center;
 }
 
 .admin {

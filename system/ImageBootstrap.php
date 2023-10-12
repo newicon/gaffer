@@ -56,43 +56,52 @@ class ImageBootstrap extends Bootstrap
         $uri = $request->getUri();
         $path = $uri->getPath();
         $pathInfo = pathinfo(PUBLIC_DIR . $path);
-        if (preg_match('/(.+)_[0-9]+_[0-9]+$/', $pathInfo['filename'], $matches)) {
-
+        if (preg_match('/(.+?)_(\d+|x)_(\d+|x)$/', $pathInfo['filename'], $matches)) {
             $sourceFilename = $matches[1];
+            $width = $matches[2] === 'x' ? null : (int)$matches[2];
+            $height = $matches[3] === 'x' ? null : (int)$matches[3];
 
-            $parts = explode("_", $pathInfo['filename']);
-            if (count($parts)!==3) {
-                throw new \Exception("Image not found : invalid image specification");
+
+            if ($width !==null) {
+                if ($width < 1) {
+                    throw new \Exception("Image not found : width must be at least 1");
+                }
+                if ($width > self::MAX_IMAGE_WIDTH) {
+                    throw new \Exception("Image not found : width must be less than " . self::MAX_IMAGE_WIDTH);
+                }
             }
-
-            $height = intval(array_pop($parts));
-            $width = intval(array_pop($parts));
-
-            if (!$height || !$width) {
-                throw new \Exception("Failed to extract require image size from '".$pathInfo['filename']."'");
+            if ($height!==null) {
+                if ($height < 1) {
+                    throw new \Exception("Image not found : height must be at least 1");
+                }
+                if ($height > self::MAX_IMAGE_WIDTH) {
+                    throw new \Exception("Image not found : height must be less than " . self::MAX_IMAGE_HEIGHT);
+                }
             }
             $sourceImage = $pathInfo['dirname'] . DIRECTORY_SEPARATOR . $sourceFilename . "." . $pathInfo["extension"];
             if (file_exists($sourceImage)) {
-                $widthInt = $width ? intval($width) : null;
-                $heightInt = $height ? intval($height) : null;
-                if (!$widthInt && !$heightInt) {
-                    throw new \Exception("Image not found : invalid image specification");
-                }
-                if ($widthInt && ($widthInt<1 || $width>self::MAX_IMAGE_WIDTH)) {
-                    throw new \Exception("Image not found : bad image width ".$widthInt);
-                }
-
-                if ($widthInt && ($widthInt<1 || $width>self::MAX_IMAGE_HEIGHT)) {
-                    throw new \Exception("Image not found : bad image height ".$widthInt);
-                }
                 try {
-                    $image = ImageManagerStatic::make($sourceImage);
-                    $image->resize($widthInt, $heightInt);
-                    $image->save($pathInfo['dirname'].DIRECTORY_SEPARATOR.$pathInfo['basename']);
-                    return new RedirectResponse($uri);
+                    if ($width===null && $height===null) {
+                        $newSymlink = $pathInfo['dirname'] .DIRECTORY_SEPARATOR.$pathInfo['basename'];
+                        symlink($sourceImage, $newSymlink );
+                    }
+                    else {
+                        $image = ImageManagerStatic::make($sourceImage);
+                        if ($width!==null && $width>$image->getWidth()) {
+                            throw new \Exception("Image not found : specified width ".$width." was wider than the original width");
+                        }
+                        if ($height!==null && $height>$image->getHeight()) {
+                            throw new \Exception("Image not found : specified height ".$height." was wider than the original height");
+                        }
+                        $image->resize($width, $height, function($constraint) {
+                            $constraint->aspectRatio();
+                        });
+                        $image->save($pathInfo['dirname'].DIRECTORY_SEPARATOR.$pathInfo['basename']);
+                    }
+                    return new RedirectResponse($uri->getPath());
                 }
                 catch (\Exception $exc) {
-                    throw new \Exception("Image not found");
+                    throw new \Exception("Image not found : ".$exc->getMessage());
                 }
             }
         }

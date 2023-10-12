@@ -84,56 +84,6 @@ class AdminController extends PlatesController
         }
     }
 
-    /**
-     * @param ServerRequestInterface $request
-     * @param string|null $id
-     * @return Response
-     * @throws \Exception
-     */
-    public function actionMenu(ServerRequestInterface $request, string $id = null): Response
-    {
-        if ($id) {
-            $form = new \App\Form\Menu($id);
-            if ($form->processed($request)) {
-                return $this->redirect('/admin/menu');
-            }
-            return $this->render("admin::menu", compact( 'form'));
-        } else {
-            $menu = Menu::hydrateMany(null,null,'`order` ASC');
-            return $this->render("admin::menus", compact('menu'));
-        }
-    }
-
-    public function actionWork(ServerRequestInterface $request, $id = null): Response
-    {
-        if ($id) {
-            $form = new \App\Form\Work($id);
-            if ($form->processed($request)) {
-                return $this->redirect('/admin/work');
-            }
-            return $this->render("admin::work", compact( 'form'));
-        }
-        else {
-            $works = Work::hydrateMany();
-            return $this->render("admin::works", compact('works'));
-        }
-    }
-
-    public function actionNews(ServerRequestInterface $request, $id = null): Response
-    {
-        if ($id) {
-            $form = new \App\Form\News($id);
-            if ($form->processed($request)) {
-                return $this->redirect('/admin/news');
-            }
-            return $this->render("admin::newsitem", compact( 'form'));
-        }
-        else {
-            $news = News::hydrateMany();
-            return $this->render("admin::news", compact('news'));
-        }
-    }
-
     public function actionImages(ServerRequestInterface $request, $id = null): Response
     {
         if ($id && strpos($id,'..')===0) {
