@@ -1,5 +1,5 @@
 .idea
-config.ini
+tests/Support/Data/config.ini
 vendor/
 public/images/*
 !public/images/.htaccess

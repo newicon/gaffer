@@ -64,3 +64,29 @@ __batteries not included ... this is very much a work in progress ... don't say 
 - move the Deform library to its own repo
 - unit/acceptance tests
 - rename /image to /images!!
+
+# Codeception Tests
+You can mount /_data/public/ in a local webserver to see exactly what is being tested by the acceptance tests.
+
+Run the unit & acceptance tests like this:
+```
+./codecept run
+```
+
+Additionally generate a coverage report (to /_output/coverage) like this:
+```
+./codecept run --coverage --coverage-html
+```
+
+## PHP Webserver
+You can view the acceptance test pages using PHP's built in webserver, something like this:
+> ```php -S localhost:8000 ./tests/Support/Data/public/router.php```
+
+## Troubleshooting
+During coverage report generation you may see this error:
+```XDEBUG_MODE=coverage or xdebug.mode=coverage has to be set```
+If so then you can either run it like this
+```XDEBUG_MODE=coverage && ./codecept run --coverage --coverage-html```
+or update your php.ini settings for xdebug with multiple available modes like this
+```xdebug.mode=develop,debug,coverage```
+... and then restart php-fpm
