@@ -45,7 +45,7 @@ DB_CHAR = 'utf8'
 ## notes
 - highly [PSR](https://www.php-fig.org/psr/) compliant
 - highly [composer](https://getcomposer.org/) based ... uses the composer autoloader with additional PSR4 support
-- auto-magic image resizing ... place an image in /image then use {image_name}\_{width}\_{height}.{extension} for imagemagik to resize it!
+- auto-magic image resizing ... place an image in /image then use {image_name}\_{width}\_{height}.{extension} for intervention to resize it!
 - as mentioned uses various CDN distributed libraries
 - current composer dependencies are as follows:
   - [composer](https://github.com/composer/composer) : itself!

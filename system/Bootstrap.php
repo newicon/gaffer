@@ -82,16 +82,18 @@ abstract class Bootstrap
 
         // db stuff ... not obligatory!
         define('DB_HOST', $ini['DB_HOST'] ?? '127.0.0.1');
+        define('DB_PORT', $ini['DB_PORT'] ?? '3306');
         define('DB_NAME', $ini['DB_NAME'] ?? null);
         define('DB_USER', $ini['DB_USER'] ?? null);
         define('DB_PASS', $ini['DB_PASS'] ?? null);
+        define('DB_TYPE', $ini['DB_TYPE'] ?? 'mysql');
         define('DB_CHAR', $ini['DB_CHAR'] ?? 'utf8mb4');
 
         date_default_timezone_set(TIMEZONE);
 
         if (DB_NAME) {
-            $dsn = "mysql:dbname=".DB_NAME.";host=127.0.0.1;charset=".DB_CHAR;
-            $this->setupDatabase($dsn, DB_USER, DB_PASS);;
+            $dsn = DB_TYPE . ":dbname=" . DB_NAME . ";host=" . DB_HOST . ";port=" . DB_PORT . ";charset=" . DB_CHAR;
+            $this->setupDatabase($dsn, DB_USER, DB_PASS);
         }
     }
 
