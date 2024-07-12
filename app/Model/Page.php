@@ -5,7 +5,7 @@ namespace App\Model;
 use Deform\Form\Model\IModel;
 use System\Db\Model;
 
-class Page extends Model implements IModel
+class Page extends Model
 {
     public static string $table = 'page';
 
@@ -51,6 +51,6 @@ class Page extends Model implements IModel
      */
     public static function forUri(\Psr\Http\Message\UriInterface $getUri)
     {
-        return self::hydrateOne("stub=:stub",['stub'=>$getUri->getPath()]);
+        return self::hydrateOne("stub=:stub AND active=:active",['stub'=>$getUri->getPath(),'active'=>1]);
     }
 }

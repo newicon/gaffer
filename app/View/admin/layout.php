@@ -29,6 +29,7 @@
         <hr>
         <a href="/admin/pages">Pages</a>
         <a href="/admin/images">Images</a>
+        <a href="/admin/users">Users</a>
         <hr>
         <a href="/admin/logout">Logout</a>
     </nav>

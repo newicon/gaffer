@@ -103,7 +103,6 @@ abstract class Bootstrap
      */
     protected function setupDatabase(string $dsnConnectionString, string $dbUser, string $dbPassword): void
     {
-        return;
         //throw new \Exception("Database connection implementation as yet unspecified!");
     }
 
@@ -116,19 +115,19 @@ abstract class Bootstrap
      * @param ResponseInterface $response
      * @return mixed
      */
-    public abstract function emit(ResponseInterface $response);
+    public abstract function emit(ResponseInterface $response): bool;
 
     /**
      * @param ServerRequestInterface $request
      * @return ResponseInterface
      */
-    public abstract function getResponse(\Psr\Http\Message\ServerRequestInterface $request): \Psr\Http\Message\ResponseInterface;
+    public abstract function getResponse(ServerRequestInterface $request): ResponseInterface;
 
     /**
      * @param \Exception $exc
      * @return ResponseInterface
      */
-    public abstract function getErrorResponse(\Exception $exc): \Psr\Http\Message\ResponseInterface;
+    public abstract function getErrorResponse(\Exception $exc): ResponseInterface;
 
     /**
      * override to perform app specific setup before processing a request

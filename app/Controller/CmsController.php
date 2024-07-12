@@ -19,7 +19,6 @@ class CmsController extends PlatesController
     {
         $page = Page::forUri($request->getUri());
         if ($page) {
-
             return $this->render("cms",['page'=>$page]);
         }
         else {

@@ -8,7 +8,6 @@
 <?php $this->layout('admin::layout', ['title' => 'Gaffer - ADMIN','hideNav'=>true]) ?>
 <form id="login-form" action="" method="post">
     <h1 style="text-align:center">Admin</h1>
-
     <div>
         <label>Email</label>
         <input type="email" name="email" />

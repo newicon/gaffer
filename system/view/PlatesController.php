@@ -38,7 +38,7 @@ class PlatesController
     public function render(string $viewFile, array $params=[]): Response
     {
         $body = $this->templates->render($viewFile, $params);
-        $response = new Response;
+        $response = new Response();
         $response->getBody()->write($body);
         return $response;
     }

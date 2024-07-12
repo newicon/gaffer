@@ -84,6 +84,20 @@ class AdminController extends PlatesController
         }
     }
 
+    public function actionUsers(ServerRequestInterface $request, string $id = null): Response {
+        if ($id) {
+            $form = new \App\Form\User($id);
+            if ($form->processed($request)) {
+                return $this->redirect('/admin/users');
+            }
+            return $this->render("admin::user", compact( 'form'));
+        } else {
+            $users = User::hydrateMany();
+            return $this->render("admin::users", compact('users'));
+        }
+    }
+
+
     public function actionImages(ServerRequestInterface $request, $id = null): Response
     {
         if ($id && strpos($id,'..')===0) {
@@ -125,6 +139,7 @@ class AdminController extends PlatesController
             return $this->render('admin::images', compact('files', 'imageDirStr'));
         }
     }
+
 
     public function actionUploadimage(ServerRequestInterface $request, $id = null): JsonResponse
     {

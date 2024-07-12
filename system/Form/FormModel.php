@@ -9,9 +9,8 @@ use System\Db\Model;
 
 /**
  * basic form processor
- * requires : \System\Db & \Deform
- */
-abstract class FormModel extends \Deform\Form\Model\FormModel
+  */
+abstract class FormModel extends \Deform\Form\FormModel
 {
     /** @return Model */
     abstract function getModel():Model;
