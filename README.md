@@ -6,7 +6,7 @@ __batteries not included ... this is very much a work in progress ... don't say 
 
 ## requirements
 - local webserver : apache2 (due to the current .htaccess requirement)
-- PHP 8.1 +
+- PHP 8.3 +
 - MySQL/Maria 15.1+
 - interwebs! uses various CDN libraries
 - SCSS if you wish to compile the css from sources
@@ -23,19 +23,7 @@ __batteries not included ... this is very much a work in progress ... don't say 
 ## installation
 - clone this repo (duh!)
 - setup hosts/vhosts (as required) pointing to /public
-- create a /config.ini file like this, something like this
-```
-ENV = 'development'
-DEBUG = 'true'
-TIMEZONE = 'Europe/London'
-EMAIL = 'gaffer@newicon.net'
-
-DB_HOST = 'localhost'
-DB_NAME = 'gaffer_dev'
-DB_USER = 'root'
-DB_PASS = 'root'
-DB_CHAR = 'utf8'
-```
+- copy config.ini.sample to /config.ini and update as necessary
 - create a local database using the scripts in /sql
 - run ```composer install```
 - browse away!
@@ -60,7 +48,8 @@ DB_CHAR = 'utf8'
   - [psr/*](https://github.com/php-fig) : PSR definitions
   - [rakit/validation](https://github.com/rakit/validation) : validation library
   - [ralouphie/getallheaders](https://github.com/ralouphie/getallheaders) : PHP getallheaders() polyfill 🤷. dependency of guzzlehttps/psr7
-
+  - [dougallwinship/deform](https://github.com/DougallWinship/deform) : form building library
+  these are in order to build the demo app, you may not require them all for what you are doing!
 
 ## todo
 - security security security!
