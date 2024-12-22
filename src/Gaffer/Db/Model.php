@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Db;
+namespace Gaffer\Db;
 
 use Rakit\Validation\Validator;
 

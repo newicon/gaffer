@@ -3,9 +3,9 @@
 namespace App\Form;
 
 use Deform\Html\HtmlTag;
+use Gaffer\Db\Model;
 use Gaffer\Form\App;
 use Psr\Http\Message\ServerRequestInterface;
-use App\Db\Model;
 
 /**
  * basic form processor

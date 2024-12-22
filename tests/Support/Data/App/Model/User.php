@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-use App\Db\Model;
+use Gaffer\Db\Model;
 
 class User extends Model
 {

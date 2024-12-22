@@ -2,10 +2,9 @@
 
 namespace App\Form;
 
-use \League\Route\Http\Exception\NotFoundException;
-use \App\Db\Model;
-use \App\Form\FormModel;
-use \App\Model\User as UserModel;
+use App\Model\User as UserModel;
+use Gaffer\Db\Model;
+use League\Route\Http\Exception\NotFoundException;
 
 class User extends FormModel
 {

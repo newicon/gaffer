@@ -13,6 +13,11 @@
             "Gaffer\\": "src/Gaffer"
         }
     },
+    "require": {
+        "laminas/laminas-diactoros": "^2.8",
+        "laminas/laminas-httphandlerrunner": "^2.1",
+        "intervention/image": "^2.7"
+    },
     "require-dev": {
         "codeception/codeception": "^5.1",
         "codeception/module-phpbrowser": "^3.0",

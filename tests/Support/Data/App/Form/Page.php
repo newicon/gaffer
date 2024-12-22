@@ -2,9 +2,8 @@
 
 namespace App\Form;
 
+use Gaffer\Db\Model;
 use League\Route\Http\Exception\NotFoundException;
-use App\Db\Model;
-use App\Form\FormModel;
 
 class Page extends FormModel
 {

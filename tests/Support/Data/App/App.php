@@ -60,7 +60,7 @@ class App extends Bootstrap
 
     protected function setupDatabase(string $dsnConnectionString, string $dbUser, string $dbPassword): void
     {
-        \App\Db\DB::init($dsnConnectionString, $dbUser, $dbPassword);
+        \Gaffer\Db\DB::init($dsnConnectionString, $dbUser, $dbPassword);
     }
 
 

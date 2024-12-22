@@ -41,7 +41,7 @@ class ImageBootstrap extends Bootstrap
 
     /**
      * @param ResponseInterface $response
-     * @return bool|mixed
+     * @return bool
      */
     public function emit(ResponseInterface $response): bool
     {
@@ -94,7 +94,7 @@ class ImageBootstrap extends Bootstrap
                             throw new \Exception("Image not found : specified width ".$width." was wider than the original width");
                         }
                         if ($height!==null && $height>$image->getHeight()) {
-                            throw new \Exception("Image not found : specified height ".$height." was wider than the original height");
+                            throw new \Exception("Image not found : specified height ".$height." was higher than the original height");
                         }
                         $image->resize($width, $height, function($constraint) {
                             $constraint->aspectRatio();
