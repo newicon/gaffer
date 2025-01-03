@@ -73,7 +73,7 @@ class AdminController extends PlatesController
     public function actionPages(ServerRequestInterface $request, string $id = null): Response
     {
         if ($id) {
-            $form = new \Support\Data\app\Form\Page($id);
+            $form = new \App\Form\Page($id);
             if ($form->processed($request)) {
                 return $this->redirect('/admin/pages');
             }
@@ -131,12 +131,19 @@ class AdminController extends PlatesController
                 }
             }
         }
+        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER['SERVER_PORT'] == 443 ? 'https' : 'http';
+        $port = (($protocol ==='https' && $_SERVER['SERVER_PORT'] !== 443) || ($protocol==='http' && $_SERVER['SERVER_PORT'] !== 80))
+            ? ":".$_SERVER['SERVER_PORT']
+            : '';
+        $serverName = $_SERVER['SERVER_NAME'] ?? $_SERVER['HTTP_HOST'];
+        $server = $protocol . "://" . $serverName . $port;
+
         $isAjax = 'xmlhttprequest' == strtolower( $_SERVER['HTTP_X_REQUESTED_WITH'] ?? '' );
         if ($isAjax) {
             return new JsonResponse($files);
         }
         else {
-            return $this->render('admin::images', compact('files', 'imageDirStr'));
+            return $this->render('admin::images', compact('files', 'imageDirStr', 'server'));
         }
     }
 

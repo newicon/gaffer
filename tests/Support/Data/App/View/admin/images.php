@@ -3,6 +3,7 @@
  * @var \League\Plates\Template\Template $this
  * @var array $files
  * @var string $imageDirStr
+ * @var string $server
  */
 ?>
 
@@ -28,8 +29,8 @@
             <td><?= $file['size'] ?></td>
             <td><?= $file['width'] ?> x <?= $file['height'] ?></td>
             <td>
-                <a  onclick="copyToClipboard('<?= $file['url'] ?>')" style="cursor:pointer" title="copy image URL to clipboard"><i class="fa fa-copy" ></i></a>
-                <a class='lightbox' href="<?= $file['url'] ?>" target="_blank" rel="noopener noreferrer"><i class="fa fa-eye" style="cursor:pointer" title="open image in new tab"></i></a>
+                <a href="<?= $server.$file['url'] ?>" onclick="copyToClipboard('<?= $server.$file['url'] ?>'); return false;" style="cursor:pointer" title="copy image URL to clipboard"><i class="fa fa-copy" ></i></a>
+                <a class='lightbox' href="<?= $file['url'] ?>" target="_blank" rel="noopener noreferrer"><i class="fa fa-eye" style="cursor:pointer" title="preview image"></i></a>
             </td>
         </tr>
 <?php } ?>
