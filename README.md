@@ -11,15 +11,6 @@ __batteries not included ... this is very much a work in progress ... don't say 
 - interwebs! uses various CDN libraries
 - SCSS if you wish to compile the css from sources
 
-## structure
-```/app``` - the demo app   
-```/lib``` - any non-composer based libraries/dependencies (currently just a form handling library called Deform)   
-```/public``` - the public html directory   
-```/public/assets``` - fixed assets css/js/images/etc (in the repo)   
-```/image``` - uploadable and/or resized images (not in the repo)   
-```/media``` - media (not in the repo)   
-```/vendor``` - composer deps + the project autoloader   
-
 ## installation
 - clone this repo (duh!)
 - setup hosts/vhosts (as required) pointing to /public
@@ -29,6 +20,7 @@ __batteries not included ... this is very much a work in progress ... don't say 
 - browse away!
 - to view the admin area you will need to create an admin user via cli.php
 ```php cli.php add-user {email} {password}```
+
   
 ## notes
 - highly [PSR](https://www.php-fig.org/psr/) compliant
@@ -50,6 +42,9 @@ __batteries not included ... this is very much a work in progress ... don't say 
   - [ralouphie/getallheaders](https://github.com/ralouphie/getallheaders) : PHP getallheaders() polyfill 🤷. dependency of guzzlehttps/psr7
   - [dougallwinship/deform](https://github.com/DougallWinship/deform) : form building library
   these are in order to build the demo app, you may not require them all for what you are doing!
+
+## codeception
+
 
 ## todo
 - security security security!

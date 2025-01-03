@@ -9,15 +9,17 @@
 <form id="login-form" action="" method="post">
     <h1 style="text-align:center">Admin</h1>
     <div>
-        <label>Email</label>
-        <input type="email" name="email" />
+        <label>Email
+            <input type="email" name="email" />
+        </label>
     </div>
     <div>
-        <label>Password</label>
-        <input type="password" name="password" />
+        <label>Password
+            <input type="password" name="password" />
+        </label>
     </div>
     <div>
-        <input type="submit" value="login">
+        <input type="submit" name="login" value="login">
     </div>
     <?php if ($error) {?>
     <div class="error"><?= $error ?></div>

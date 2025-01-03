@@ -15,8 +15,8 @@ class AdminLoginCest
     public function tryToTest(AcceptanceTester $I)
     {
         $I->amOnPage('/admin');
-        $I->fillField("Email", "dougall.winship@gmail.com");
-        $I->fillField("Password", "dougall");
-        $I->click("Login");
+        $I->fillField("email", "dougall.winship@gmail.com");
+        $I->fillField("password", "dougall");
+        $I->click("login");
     }
 }
