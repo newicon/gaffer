@@ -9,7 +9,7 @@
 <h1>ADMIN ERROR : <?= $exc->getMessage() . PHP_EOL; ?></h1>
 <?php if (DEBUG) { ?>
 <pre>
-<?= error . phpget_class($exc) . PHP_EOL ?>
+<?= get_class($exc) . PHP_EOL ?>
 <?= $exc->getFile().":".$exc->getLine().PHP_EOL ?>
 <?= $exc->getTraceAsString() . PHP_EOL ?>
 </pre>

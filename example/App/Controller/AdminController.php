@@ -103,7 +103,7 @@ class AdminController extends PlatesController
         if ($id && strpos($id,'..')===0) {
             throw new \Exception("Illegal URL for admin media : directory traversal is not permitted");
         }
-        $imageDirStr = PUBLIC_DIR.DIRECTORY_SEPARATOR.'image'.($id ? DIRECTORY_SEPARATOR.$id : '');
+        $imageDirStr = PUBLIC_DIR.DIRECTORY_SEPARATOR.'images'.($id ? DIRECTORY_SEPARATOR.$id : '');
         if (!is_dir($imageDirStr)) {
             throw new \Exception("Invalid images directory : ".$imageDirStr);
         }
@@ -119,7 +119,7 @@ class AdminController extends PlatesController
                     $files[] = [
                         'name' => $filename,
                         //'path' => $fullFilePath,
-                        'url' => "/image/" . $filename,
+                        'url' => "/images/" . $filename,
                         'type' => mime_content_type($fileInfo->getRealPath()),
                         'size' => $fileInfo->getSize(),
                         'width' => $im->getWidth(),

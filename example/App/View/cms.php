@@ -1,7 +1,7 @@
 <?php
 /**
  * @var \League\Plates\Template\Template $this
- * @var \Support\Data\app\Model\Page $page
+ * @var \App\Model\Page $page
   * @var string $title
  */
 $pageClass = $page->stub==='/' ? 'home' : strtolower(str_replace('/','-',substr($page->stub,1)));

@@ -10,7 +10,7 @@
 
 <?php if (DEBUG) { ?>
 <pre>
-<?= phpget_class($exception) . PHP_EOL ?>
+<?= get_class($exception) . PHP_EOL ?>
 <?= $exception->getFile().":".$exception->getLine().PHP_EOL ?>
 <?= $exception->getTraceAsString() . PHP_EOL ?>
 </pre>

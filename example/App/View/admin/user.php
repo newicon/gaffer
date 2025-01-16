@@ -1,7 +1,7 @@
 <?php
 /**
  * @var \League\Plates\Template\Template $this
- * @var \Support\Data\app\Form\User $form
+ * @var \App\Form\User $form
  */
 ?>
 <?php $this->layout('admin::layout', ['title' => 'ADMIN - Users']) ?>

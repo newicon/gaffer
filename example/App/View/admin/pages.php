@@ -1,7 +1,7 @@
 <?php
 /**
  * @var \League\Plates\Template\Template $this
- * @var array $pages
+ * @var \App\Model\Page[] $pages
  */
 ?>
 <?php $this->layout('admin::layout', ['title' => 'ADMIN - Pages']) ?>

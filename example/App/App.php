@@ -76,7 +76,7 @@ class App extends Bootstrap
         $filename = $uploadedFile->getClientFilename();
         $pathInfo = pathinfo($filename);
         $isImage = (in_array($pathInfo['extension'], ['svg', 'png', 'gif', 'jpeg', 'jpg', 'webp']));
-        $saveDir = $isImage ? 'image' : 'media';
+        $saveDir = $isImage ? 'images' : 'media';
 
         $idx = 0;
         do {
