@@ -17,15 +17,15 @@ __batteries not included ... this is very much a work in progress ... don't say 
 - navigate to /example and run  ```composer install```
 - setup hosts/vhosts (as required) pointing to /example/public
 - copy config.ini.sample to /example/config.ini and update as necessary
-- create a local database using the scripts in /sql
-- browse away!
+- create a local database using the scripts in /example/sql
+- mount /example/public browse away using your local webserver of choice (see below)
 - to view the admin area you will need to create an admin user via cli.php
 ```php cli.php add-user {email} {password}```
   
 ## Notes
 - highly [PSR](https://www.php-fig.org/psr/) compliant
 - highly [composer](https://getcomposer.org/) based ... uses the composer autoloader with additional PSR4 support
-- auto-magic image resizing ... place an image in /image then use {image_name}_{width}_{height}.{extension} for intervention to resize it!
+- the example has auto/magic image resizing ... place an image in /image then use {image_name}_{width}_{height}.{extension} for intervention to resize it!
 - as mentioned uses various CDN distributed libraries
 
 ## Todo
@@ -45,11 +45,17 @@ Additionally generate a coverage report (to /_output/coverage) like this:
 ./codecept run --coverage --coverage-html
 ```
 
-## PHP Webserver
+## Local Webserver
 You can view the example using PHP's built in webserver, something like this:
 ```
 php -S localhost:8000 example/public/router.php
 ```
+If you have valet installed then on the command line go to gaffer/example/public and add a valet link
+```
+valet link gaffer
+```
+If using apache then just mount gaffer/example/public as a VirtualHost and it wil use the provided .htaccess
+If using nginx then you'll need both mount gaffer/example/public and rewrite traffic to index.php using try_files
 
 ## Troubleshooting
 During coverage report generation you may see this error:
