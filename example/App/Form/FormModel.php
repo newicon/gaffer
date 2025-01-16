@@ -4,7 +4,7 @@ namespace App\Form;
 
 use Deform\Html\HtmlTag;
 use Gaffer\Db\Model;
-use Gaffer\Form\App;
+use App\App;
 use Psr\Http\Message\ServerRequestInterface;
 
 /**

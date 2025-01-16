@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Gaffer;
+namespace App;
 
 use Intervention\Image\ImageManagerStatic;
 use Laminas\Diactoros\Response;
@@ -9,7 +9,7 @@ use Laminas\Diactoros\Response\RedirectResponse;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-class ImageBootstrap extends Bootstrap
+class ImageBootstrap extends \Gaffer\Bootstrap
 {
     public const int MAX_IMAGE_WIDTH = 1024;
     public const int MAX_IMAGE_HEIGHT = 1024;
@@ -78,23 +78,29 @@ class ImageBootstrap extends Bootstrap
                     throw new \Exception("Image not found : height must be at least 1");
                 }
                 if ($height > self::MAX_IMAGE_WIDTH) {
-                    throw new \Exception("Image not found : height must be less than " . self::MAX_IMAGE_HEIGHT);
+                    throw new \Exception(
+                        "Image not found : height must be less than " . self::MAX_IMAGE_HEIGHT
+                    );
                 }
             }
             $sourceImage = $pathInfo['dirname'] . DIRECTORY_SEPARATOR . $sourceFilename . "." . $pathInfo["extension"];
             if (file_exists($sourceImage)) {
                 try {
                     if ($width===null && $height===null) {
-                        $newSymlink = $pathInfo['dirname'] .DIRECTORY_SEPARATOR.$pathInfo['basename'];
+                        $newSymlink = $pathInfo['dirname'] . DIRECTORY_SEPARATOR . $pathInfo['basename'];
                         symlink($sourceImage, $newSymlink );
                     }
                     else {
                         $image = ImageManagerStatic::make($sourceImage);
                         if ($width!==null && $width>$image->getWidth()) {
-                            throw new \Exception("Image not found : specified width ".$width." was wider than the original width");
+                            throw new \Exception(
+                                "Image not found : specified width ".$width." was wider than the original width"
+                            );
                         }
                         if ($height!==null && $height>$image->getHeight()) {
-                            throw new \Exception("Image not found : specified height ".$height." was higher than the original height");
+                            throw new \Exception(
+                                "Image not found : specified height ".$height." was higher than the original height"
+                            );
                         }
                         $image->resize($width, $height, function($constraint) {
                             $constraint->aspectRatio();

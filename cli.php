@@ -1,6 +1,6 @@
 <?php
 
-use Support\Data\app\Model\User;
+use \App\Model\User;
 
 include __DIR__.'/vendor/autoload.php';
 
@@ -11,7 +11,7 @@ $params = array_slice($argv,2);
 // this is really bodged ... there should be a dedicated CLI bootstrap!
 $ini = parse_ini_file(__DIR__ . DIRECTORY_SEPARATOR . "/config.ini");
 $connectionString = "mysql:dbname=".$ini['DB_NAME'].";host=".$ini['DB_HOST'].";charset=".$ini['DB_CHAR'];
-\Support\Data\app\Db\DB::init($connectionString, $ini['DB_USER'], $ini['DB_PASS']);
+\Gaffer\Db\DB::init($connectionString, $ini['DB_USER'], $ini['DB_PASS']);
 
 switch ($command)
 {

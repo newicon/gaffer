@@ -37,9 +37,6 @@ $(function() {
 (function ($) {
     'use strict';
 
-
-
-
     // Plugin default options
     let defaultOptions = {
         url:ajaxFileEndpoints.load,
@@ -167,7 +164,6 @@ $(function() {
             }
         }
     }
-
 
     $.extend(true, $.trumbowyg, {
         langs: {

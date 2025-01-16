@@ -16,11 +16,13 @@
     "require": {
         "laminas/laminas-diactoros": "^2.8",
         "laminas/laminas-httphandlerrunner": "^2.1",
-        "intervention/image": "^2.7"
+        "intervention/image": "^2.7",
+        "ext-pdo": "*"
     },
     "require-dev": {
         "codeception/codeception": "^5.1",
         "codeception/module-phpbrowser": "^3.0",
-        "codeception/module-asserts": "^3.0"
+        "codeception/module-asserts": "^3.0",
+        "symfony/process": "^7.2"
     }
 }

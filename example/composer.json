@@ -1,6 +1,6 @@
 {
     "name": "dougallwinship/gaffer.newicon.net",
-    "description": "gaffer",
+    "description": "gaffer test",
     "type": "website",
     "authors": [
         {
@@ -10,8 +10,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "App\\": "app",
-            "Gaffer\\": "../../../src/Gaffer"
+            "App\\": "App",
+            "Gaffer\\": "../src/Gaffer"
         }
     },
     "require": {

@@ -1,6 +1,7 @@
 <?php
 $cwd = getcwd();
-$routerFile = realpath("./tests/Support/Data/public/router.php");
+$routerFile = realpath($cwd."/example/public/router.php");
+
 if (!file_exists($routerFile)) {
     throw new \Exception("Failed to locate router file : ".$routerFile);
 }
