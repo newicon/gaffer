@@ -1,8 +1,8 @@
 # gaffer
-minimal/experimental [PSR](https://www.php-fig.org/psr/)/[composer](https://getcomposer.org/) based framework demo
+Minimal [PSR](https://www.php-fig.org/psr/)/[composer](https://getcomposer.org/) based framework.
+Utilises defined PSR standards where possible and aims to keep dependencies to a minimum.
 
-__IMPORTANT NOTE :__    
-__batteries not included ... this is very much a work in progress ... don't say you weren't warned!__
+## MIT License
 
 ## requirements
 - PHP 8.3 +
@@ -12,7 +12,7 @@ __batteries not included ... this is very much a work in progress ... don't say 
 - local webserver : apache2 (due to the current .htaccess requirement) or even just PHP's build in webserver
 
 ## installation
-- clone this repo (duh!)
+- clone this repo
 - in the root dir run ```composer install```
 - navigate to /example and run  ```composer install```
 - setup hosts/vhosts (as required) pointing to /example/public
@@ -29,7 +29,6 @@ __batteries not included ... this is very much a work in progress ... don't say 
 - as mentioned uses various CDN distributed libraries
 
 ## Todo
-- security security security!
 - dedicated CLI bootstrap
 - add a [PSR-15](https://www.php-fig.org/psr/psr-15/) based middleware support with a couple of example implementations
 - further unit/acceptance tests
@@ -65,3 +64,7 @@ If so then you can either run it like this
 or update your php.ini settings for xdebug with multiple available modes like this
 ```xdebug.mode=develop,debug,coverage```
 ... and then restart php-fpm
+
+## Security
+
+Any security issues spotted please email developers@newicon.net
