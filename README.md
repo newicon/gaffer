@@ -2,8 +2,6 @@
 Minimal [PSR](https://www.php-fig.org/psr/)/[composer](https://getcomposer.org/) based framework.
 Utilises defined PSR standards where possible and aims to keep dependencies to a minimum.
 
-## MIT License
-
 ## requirements
 - PHP 8.3 +
 - MySQL/Maria 15.1+
