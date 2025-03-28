@@ -63,6 +63,5 @@ or update your php.ini settings for xdebug with multiple available modes like th
 ```xdebug.mode=develop,debug,coverage```
 ... and then restart php-fpm
 
-## Security
-
+## Security
 Any security issues spotted please email developers@newicon.net
